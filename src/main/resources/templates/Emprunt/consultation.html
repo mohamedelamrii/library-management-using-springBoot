@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+layout:decorate="Emprunt/layout">
+<head>
+<meta charset="utf-8" />
+<title>Liste Documents</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<p></p>
+
+<div class="container" layout:fragment="content">
+
+
+<table class="table caption-top">
+  <caption><h4>La liste des emprunts de Client : <span th:text="${adherent.prenom}"></span>
+  <span th:text="${adherent.nom}"></span></h4></caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">date_Emprunt</th>
+      <th scope="col">date_retour</th>
+      
+      <th scope="col">CODE_DOC </th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="e:${emprunts}">
+      <th scope="row" th:text="${e.id_emprunt}"></th>
+      <td th:text="${e.date_Emprunt}"></td>
+      <td th:text="${e.date_retour}"></td>
+      
+       <td th:text="${e.Document.id_doc}"></td>
+     
+     
+  </tbody>
+</table>
+<div>
+<ul class="nav nav-pills">
+<li  th:class="${pageCourante}==${index.index}?'active':''" th:each="p,index:${nbrPages}" >
+<a th:href="@{lister(page=${index.index},size=${size})}" th:text="${index.index}"> </a>
+
+
+</li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

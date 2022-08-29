@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+layout:decorate="Adherent/layout">
+<head>
+<meta charset="utf-8" />
+<title>Liste Adherents</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<p></p>
+
+<div class="container" layout:fragment="content">
+<form th:action="@{lister}" method="get">
+<label> Enter CIN:</label>
+<input type="text" name="cin" th:value="${cin}"/>
+<button class ="btn btn-primary ">Chercher </button>
+
+
+
+</form>
+
+<table class="table caption-top">
+  <caption><h4>La liste des adherents</h4></caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">nom</th>
+      <th scope="col">prenom</th>
+      <th scope="col">adresse</th>
+      <th scope="col">CIN</th>
+      <th scope="col">date de naissance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="a:${adherents}">
+      <th scope="row" th:text="${a.id_adherent}"></th>
+      <td th:text="${a.nom}"></td>
+      <td th:text="${a.prenom}"></td>
+      <td th:text="${a.adresse}"></td>
+       <td th:text="${a.cin}"></td>
+      <td th:text="${a.dateDeNaissance}"></td>
+      <td ><a th:href="@{edit(id_adherent=${a.id_adherent})}">Edit</a></td>
+      <td ><a th:href="@{delete(id_adherent=${a.id_adherent},page=${pageCourante},size=${size},cin=${cin})}">Delete</a></td>
+      <td ><a th:href="@{consulter(id_adherent=${a.id_adherent})}">Consulter</a></td>
+</tr>  
+  </tbody>
+</table>
+<div>
+<ul class="nav nav-pills">
+<li  th:class="${pageCourante}==${index.index}?'active':''" th:each="p,index:${nbrPages}" >
+<a th:href="@{lister(page=${index.index},size=${size},cin=${cin})}" th:text="${index.index}"> </a>
+
+
+</li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

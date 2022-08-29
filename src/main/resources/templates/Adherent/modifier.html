@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+layout:decorate="Adherent/layout">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+<form th:action="@{save}" method="post">
+ <div class="form-group">
+    <label for="formGroupExampleInput">id:</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
+    name="id_adherent" th:value="${adherent.id_adherent}">
+    <span class="text-danger" th:errors="${adherent.id_adherent}"></span>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Nom:</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
+    name="nom" th:value="${adherent.nom}">
+    <span class="text-danger" th:errors="${adherent.nom}"></span>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Prenom</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="prenom" th:value="${adherent.prenom}">
+    <span class="text-danger" th:errors="${adherent.prenom}"></span>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">adresse</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="adresse" th:value="${adherent.adresse}">
+    <span class="text-danger" th:errors="${adherent.adresse}"></span>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">cin</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="cin" th:value="${adherent.cin}">
+    <span class="text-danger" th:errors="${adherent.cin}"></span>
+  </div>
+ <div class="form-group">
+    <label for="formGroupExampleInput2">date de naissance</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="dateDeNaissance" th:value="${adherent.dateDeNaissance}">
+    <span class="text-danger" th:errors="${adherent.dateDeNaissance}"></span>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">save</button>
+</form>
+</div>
+</body>
+</html>

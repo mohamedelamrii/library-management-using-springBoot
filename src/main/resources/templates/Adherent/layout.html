@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout">
+<head>
+<meta charset="utf-8"/>
+<title>template</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="../static/css/style.css" 
+                                        th:href="@{css/style.css}"
+                                        />   -->                                          
+</head>
+<body>
+
+<header>
+<div class="navbar navbar-inverse">
+<div class="container-fluid">
+<ul class="nav navbar-nav">
+<li><a class="a" th:href="@{/}">Home</a></li>
+<li><a th:href="@{lister}"> Adherents </a></li>
+<li><a th:href="@{ajouter}"> ajouter adherent </a></li>
+
+</ul>
+</div>
+</div>
+</header>
+<section layout:fragment="content"></section>
+<footer>
+<div class= "navbar-fixed-bottom">
+<small>@Copiryth 2022</small>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+layout:decorate="Emprunt/layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+<div class="spacer col-md-6">
+<form th:action="@{save}" method="post">
+ <div class="form-group">
+    <label for="formGroupExampleInput">id emprunt</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
+   name="id_emprunt" th:value="${emprunt.id_emprunt}">
+    
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">date Emprunt:</label>
+    <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Example input"
+   name="date_Emprunt" th:value="${emprunt.date_Emprunt}">
+    
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">date retour</label>
+    <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+   name="date_retour" th:value="${emprunt.date_retour}">
+    
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">code client</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="adherent" >
+   
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">code document</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="document" >
+    
+  </div>
+ 
+  
+  <button type="submit" class="btn btn-primary">save</button>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+layout:decorate="Document/layout">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+<div class="spacer col-md-6">
+<form th:action="@{saveLiv}" method="post">
+  <div class="form-group">
+  
+ 
+    <label for="formGroupExampleInput">id document:</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
+    name="id_doc" th:value="${document.id_doc}" required="required">
+   <!--  <span class="text-danger" th:errors="${adherent.nom}"></span> -->
+  </div>
+  <div class="form-group" id="forLiv">
+    <label for="formGroupExampleInput2">Nombre pages:</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="nbrPages" th:value="${document.nbrPages}" required="required">
+   <!--  <span class="text-danger" th:errors="${adherent.prenom}"></span> -->
+  </div>
+  <div class="form-group" id="forLiv">
+    <label for="formGroupExampleInput2">auteur</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="auteur" th:value="${document.auteur}" required="required">
+ <!--    <span class="text-danger" th:errors="${adherent.adresse}"></span> -->
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">prix de vente</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="prixDeVente" th:value="${document.prixDeVente}" required="required">
+   <!--  <span class="text-danger" th:errors="${adherent.cin}"></span> -->
+<!--   </div>
+   <div class="form-group" id="forRev">
+    <label for="formGroupExampleInput2">annee de publication</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="anneeDePub">
+    <span class="text-danger" th:errors="${adherent.cin}"></span>
+  </div>
+   <div class="form-group" id="forDic">
+    <label for="formGroupExampleInput2">langue</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+    name="langue">
+    <span class="text-danger" th:errors="${adherent.cin}"></span>
+  </div> -->
+ 
+  </div>
+  <button type="submit" class="btn btn-primary">save</button>
+</form>
+</div>
+</div>
+</body>
+</html>

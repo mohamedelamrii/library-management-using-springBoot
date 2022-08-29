@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+layout:decorate="Document/layout">
+<head>
+<meta charset="utf-8" />
+<title>Liste Documents</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<p></p>
+
+<div class="container" layout:fragment="content">
+<form th:action="@{lister}" method="get">
+<label> Enter Id:</label>
+<input type="text" name="idCherch" th:value="${idCherch}"/>
+<button class ="btn btn-primary ">Chercher </button>
+
+
+
+</form>
+
+<table class="table caption-top">
+  <caption><h4>La liste des livres</h4></caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Prix</th>
+      
+      <th scope="col">auteur</th>
+      <th scope="col">nombre de pages </th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="d:${documents}" th:if="${d.class.simpleName}=='Livre'">
+      <th scope="row" th:text="${d.id_doc}"></th>
+      <td th:text="${d.prixDeVente}"></td>
+      
+      <td th:text="${d.auteur}"></td>
+       <td th:text="${d.nbrPages}"></td>
+     
+      <td ><a th:href="@{editLiv(id_doc=${d.id_doc})}">edit</a></td>
+      <td ><a th:href="@{deleteLiv(id_doc=${d.id_doc},page=${pageCourante},size=${size},idCherch=${idCherch})}">delete</a></td>
+      
+</tr>  
+  </tbody>
+</table>
+<div>
+<ul class="nav nav-pills">
+<li  th:class="${pageCourante}==${index.index}?'active':''" th:each="p,index:${nbrPages}" >
+<a th:href="@{listerLiv(page=${index.index},size=${size},idCherch=${idCherch})}" th:text="${index.index}"> </a>
+
+
+</li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

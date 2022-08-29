@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout">
+<head>
+<meta charset="utf-8"/>
+<title>template</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="../static/css/style.css" 
+                                        th:href="@{css/style.css}"
+                                        />   -->   
+<style>
+.class1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+.dropbtnn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+li.dropdownn {
+  display: inline-block;
+}
+
+.dropdownn-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdownn-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdownn-content a:hover {background-color: #f1f1f1;}
+
+.dropdownn:hover .dropdownn-content {
+  display: block;
+}
+</style>                                                                              
+</head>
+<body>
+
+<header>
+<div class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="nav navbar-nav">
+<ul class="class1">
+<li><a class="a" th:href="@{/}">Home</a></li>
+<li><a class="a" th:href="@{lister}">All Documents</a></li>
+  
+  <li class="dropdownn">
+    <a  href="javascript:void(0)" class="dropbtnn">Categorie</a>
+    <div class="dropdownn-content">
+      <a class="a" th:href="@{listerLiv}">Livres</a>
+      <a class="a" th:href="@{listerRev}">Revues</a>
+      <a class="a" th:href="@{listerDic}">Dictionnaires</a>
+    </div>
+  </li>
+  <li class="dropdownn">
+    <a href="javascript:void(0)" class="dropbtnn">add Categorie</a>
+    <div class="dropdownn-content">
+      <a class="a" th:href="@{ajouterLiv}"> Livre</a>
+      <a class="a" th:href="@{ajouterRev}"> Revue</a>
+      <a class="a" th:href="@{ajouterDic}"> Dictionnaire</a>
+    </div>
+  </li>
+</ul>
+</div>
+</div>
+</div>
+</header>
+<section layout:fragment="content"></section>
+<footer>
+<div class= "navbar-fixed-bottom">
+<small>@Copiryth 2022</small>
+</div>
+</footer>
+</body>
+</html>
