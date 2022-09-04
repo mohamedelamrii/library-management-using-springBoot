@@ -31,13 +31,13 @@ layout:decorate="Emprunt/layout">
   <div class="form-group">
     <label for="formGroupExampleInput2">code client</label>
     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
-    name="adherent" >
+    name="adherent" th:value="${emprunt.adherent.id_adherent}" >
    
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2">code document</label>
     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
-    name="document" >
+    name="document" th:value="${emprunt.document.id_doc}">
     
   </div>
  

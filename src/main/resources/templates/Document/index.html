@@ -42,8 +42,8 @@ layout:decorate="Document/layout">
       <td th:text="${d.class.simpleName}=='Livre'?${d.auteur}:'-'"></td>
        <td th:text="${d.class.simpleName}=='Livre'?${d.nbrPages}:'-'"></td>
       <td  th:text="${d.class.simpleName}=='Revue'?${d.anneeDePub}:'-'"></td>
-      <td ><a th:href="@{edit(id_doc=${d.id_doc},type=${d.class.simpleName})}">edit</a></td>
-      <td ><a th:href="@{delete(id_doc=${d.id_doc},page=${pageCourante},size=${size},idCherch=${idCherch})}">delete</a></td>
+      <td ><a th:href="@{edit(id_doc=${d.id_doc},type=${d.class.simpleName})}" class="btn btn-success">edit</a></td>
+      <td ><a th:href="@{delete(id_doc=${d.id_doc},page=${pageCourante},size=${size},idCherch=${idCherch})}" class="btn btn-danger">delete</a></td>
       
 </tr>  
   </tbody>

@@ -42,8 +42,8 @@ layout:decorate="Document/layout">
       <td th:text="${d.langue}"></td>
        
      
-      <td ><a th:href="@{editDic(id_doc=${d.id_doc})}">edit</a></td>
-      <td ><a th:href="@{deleteDic(id_doc=${d.id_doc},page=${pageCourante},size=${size},idCherch=${idCherch})}">delete</a></td>
+      <td ><a th:href="@{editDic(id_doc=${d.id_doc})}" class="btn btn-success">edit</a></td>
+      <td ><a th:href="@{deleteDic(id_doc=${d.id_doc},page=${pageCourante},size=${size},idCherch=${idCherch})}" class="btn btn-danger">delete</a></td>
       
 </tr>  
   </tbody>

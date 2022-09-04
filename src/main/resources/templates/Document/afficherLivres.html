@@ -42,8 +42,8 @@ layout:decorate="Document/layout">
       <td th:text="${d.auteur}"></td>
        <td th:text="${d.nbrPages}"></td>
      
-      <td ><a th:href="@{editLiv(id_doc=${d.id_doc})}">edit</a></td>
-      <td ><a th:href="@{deleteLiv(id_doc=${d.id_doc},page=${pageCourante},size=${size},idCherch=${idCherch})}">delete</a></td>
+      <td ><a th:href="@{editLiv(id_doc=${d.id_doc})}" class="btn btn-success">edit</a></td>
+      <td ><a th:href="@{deleteLiv(id_doc=${d.id_doc},page=${pageCourante},size=${size},idCherch=${idCherch})}" class="btn btn-danger">delete</a></td>
       
 </tr>  
   </tbody>

@@ -42,9 +42,9 @@ layout:decorate="Adherent/layout">
       <td th:text="${a.adresse}"></td>
        <td th:text="${a.cin}"></td>
       <td th:text="${a.dateDeNaissance}"></td>
-      <td ><a th:href="@{edit(id_adherent=${a.id_adherent})}">Edit</a></td>
-      <td ><a th:href="@{delete(id_adherent=${a.id_adherent},page=${pageCourante},size=${size},cin=${cin})}">Delete</a></td>
-      <td ><a th:href="@{consulter(id_adherent=${a.id_adherent})}">Consulter</a></td>
+      <td ><a th:href="@{edit(id_adherent=${a.id_adherent})}" class="btn btn-success">Edit</a></td>
+      <td ><a th:href="@{delete(id_adherent=${a.id_adherent},page=${pageCourante},size=${size},cin=${cin})}" class="btn btn-danger">Delete</a></td>
+      <td ><a th:href="@{consulter(id_adherent=${a.id_adherent})}" class="btn btn-warning">Consulter</a></td>
 </tr>  
   </tbody>
 </table>

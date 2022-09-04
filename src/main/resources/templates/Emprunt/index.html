@@ -35,8 +35,8 @@ layout:decorate="Emprunt/layout">
       <td th:text="${e.Adherent.id_adherent}"></td>
        <td th:text="${e.Document.id_doc}"></td>
      
-      <td ><a th:href="@{edit(id_emprunt=${e.id_emprunt})}">edit</a></td>
-      <td ><a th:href="@{delete(id_emprunt=${e.id_emprunt},page=${pageCourante},size=${size})}">delete</a></td>
+      <td ><a th:href="@{edit(id_emprunt=${e.id_emprunt})}" class="btn btn-success">edit</a></td>
+      <td ><a th:href="@{delete(id_emprunt=${e.id_emprunt},page=${pageCourante},size=${size})}" class="btn btn-danger">delete</a></td>
       
   </tbody>
 </table>
