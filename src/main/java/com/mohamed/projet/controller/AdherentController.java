@@ -51,6 +51,13 @@ public String getAllAdherent(Model model,
 
 @GetMapping("delete")
 public String deleteAdh(Model model,Long id_adherent,int page,int size,String cin) {
+        Adherent adherent2 = adherentService.getAdherentById(id_adherent);
+	Page<Emprunt> pages= empruntService.consulterEmprunt(adherent2,0,5);
+	if (pages != null){
+		for(Emprunt e: pages){
+			empruntService.deleteEmp(e.getId_emprunt());
+		}
+	}
 	adherentService.deleteAdh(id_adherent);
 	
 	return "redirect:/adherent/lister?page="+page+"&size="+size+"&cin="+cin;
