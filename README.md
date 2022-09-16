@@ -8,10 +8,10 @@ documents, livre, revue, et dictionnaire. Chaque livre est définie par son iden
 auteur, nombre des pages et le prix de vente. Une revue est définie par sa référence, année de
 publication, prix de vente. Chaque dictionnaire est caractérisé par son identificateur, langue, et
 prix de vente. L’emprunt d’un document par un adhérent est défini par un identificateur, la date
-d’emprunt et la date de retour. L’application doit permettre de :
+d’emprunt et la date de retour. L’application doit permettre de :  
 1 Page d’accueil permettre l’accès au trois volets de gestion d’adhérent, document, et des
-emprunts,
-2 Ajouter, modifier, supprimer, rechercher (par CIN) un adhérent,  
+emprunts,  
+2 Ajouter, modifier, supprimer, rechercher (par CIN) un adhérent,   
 3 Ajouter, modifier, supprimer, rechercher (par Id) un document,  
 4 Enregistrer, modifier, supprimer un emprunt,  
 5 Consulter le profil d’un adhérent,  
